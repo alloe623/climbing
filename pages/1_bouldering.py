@@ -8,6 +8,8 @@ font_path = Path(__file__).resolve().parents[1] / "fonts" / "KERISKEDU_R.ttf"
 with open(font_path, "rb") as f:
     font_base64 = base64.b64encode(f.read()).decode("utf-8")
 
+st.set_page_config(page_title="볼더링", layout="wide")
+
 st.markdown(f"""
 <style>
 @font-face {{
@@ -16,13 +18,11 @@ st.markdown(f"""
   font-weight: normal;
   font-style: normal;
 }}
-html, body, [class*='css'] {{
+:root, html, body, .stApp, [class*='css'] {{
   font-family: 'KERISKEDU', sans-serif !important;
 }}
 </style>
 """, unsafe_allow_html=True)
-
-st.set_page_config(page_title="볼더링", layout="wide")
 
 st.title("🧗 볼더링 (Bouldering)")
 
