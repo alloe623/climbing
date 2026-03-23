@@ -1,4 +1,26 @@
 import streamlit as st
+import base64
+from pathlib import Path
+
+# Apply embedded local font from ./fonts folder.
+# Use KERISKEDU_R.ttf or 원하는 다른 파일명으로 변경 가능합니다.
+font_path = Path(__file__).resolve().parents[1] / "fonts" / "KERISKEDU_R.ttf"
+with open(font_path, "rb") as f:
+    font_base64 = base64.b64encode(f.read()).decode("utf-8")
+
+st.markdown(f"""
+<style>
+@font-face {{
+  font-family: 'KERISKEDU';
+  src: url(data:font/truetype;charset=utf-8;base64,{font_base64}) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}}
+html, body, [class*='css'] {{
+  font-family: 'KERISKEDU', sans-serif !important;
+}}
+</style>
+""", unsafe_allow_html=True)
 
 st.set_page_config(page_title="볼더링", layout="wide")
 
