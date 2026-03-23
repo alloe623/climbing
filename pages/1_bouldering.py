@@ -18,7 +18,7 @@ st.markdown(f"""
   font-weight: normal;
   font-style: normal;
 }}
-:root, html, body, .stApp, [class*='css'] {{
+:root, html, body, .stApp, .stApp *, [class*='css'] {{
   font-family: 'KERISKEDU', sans-serif !important;
 }}
 </style>
